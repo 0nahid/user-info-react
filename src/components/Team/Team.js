@@ -1,14 +1,11 @@
 import React from 'react';
 
 const Team = (props) => {
-    console.log(props.team);
-    const team = props.team;
-    const { email } = props.team;
-    // const name = `${team.name.first} ${team.name.last}`;
+    const teams = props.team;
+    console.log(teams.users);
     return (
         <div>
-            this is team components {team.length} & {email}
-
+            this is team components
         </div>
     );
 };

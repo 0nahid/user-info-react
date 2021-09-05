@@ -2,7 +2,6 @@ import React from 'react';
 import { Col, Row, Button } from 'react-bootstrap';
 
 const Data = (props) => {
-    // console.log(props.user);
     const { email, picture: { large: img } } = props.user;
     const user = props.user;
     const name = `${user.name.first} ${user.name.last}`;
@@ -13,7 +12,7 @@ const Data = (props) => {
                 <h1>Name: {name}</h1>
                 <p>{email}</p>
                 <img src={img} alt="" />
-                <Button onClick={() => handleAddToTeam(props.user)} >Click</Button>
+                <Button onClick={() => handleAddToTeam(props.user)} >Add me to Team</Button>
             </Col>
         </Row>
     );
