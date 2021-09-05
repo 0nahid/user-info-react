@@ -6,15 +6,17 @@ import Team from '../Team/Team';
 const User = () => {
     const [users, setUsers] = useState([]);
     const [team, setTeam] = useState([]);
-    console.log(team);
     const handleAddToTeam = (users) => {
-        const newTeam = {...team, users};
+        const newTeam = [...team, users];
         setTeam(newTeam);
     }
     useEffect(() => {
         fetch('https://randomuser.me/api/?results=10')
             .then(res => res.json())
-            .then(data => setUsers(data.results))
+            .then(data => {
+                setUsers(data.results)
+                console.log(data);
+            })
             .catch(err => console.log(err))
     }, []);
     return (
